@@ -67,15 +67,6 @@ app.get('/api/:title', (request, response)=>{
     }
 })
 
-app.get('/api/:releaseYear', (request, response)=>{
-    const year = request.params.releaseYear
-    if(movies[year]){
-        response.json(movies[releaseYear])
-    }else{
-        response.json(movies['unknown'])
-    }
-})
-
 app.listen(process.env.PORT || PORT, ()=>{
     console.log('we are running')
 })
