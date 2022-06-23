@@ -58,14 +58,14 @@ app.get('/api', (request, response)=>{
     response.json(movies)
 })
 
-app.get('/api/:title', (request, response)=>{
-    const title = request.params.title.toLowerCase()
-    if(movies[title]){
-        response.json(movies[title])
-    }else{
-        response.json(movies['unknown'])
-    }
-})
+// app.get('/api/:title', (request, response)=>{
+//     const title = request.params.title.toLowerCase()
+//     if(movies[title]){
+//         response.json(movies[title])
+//     }else{
+//         response.json(movies['unknown'])
+//     }
+// })
 
 app.listen(process.env.PORT || PORT, ()=>{
     console.log('we are running')
