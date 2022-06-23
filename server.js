@@ -68,9 +68,9 @@ app.get('/api/:title', (request, response)=>{
 })
 
 app.get('/api/:releaseYear', (request, response)=>{
-    const year = request.params.releaseYear.toLowerCase()
+    const year = request.params.releaseYear
     if(movies[year]){
-        response.json(movies[year])
+        response.json(movies[releaseYear])
     }else{
         response.json(movies['unknown'])
     }
