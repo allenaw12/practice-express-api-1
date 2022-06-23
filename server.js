@@ -58,14 +58,23 @@ app.get('/api', (request, response)=>{
     response.json(movies)
 })
 
-// app.get('/api/:title', (request, response)=>{
-//     const title = request.params.title.toLowerCase()
-//     if(movies[title]){
-//         response.json(movies[title])
-//     }else{
-//         response.json(movies['unknown'])
-//     }
-// })
+app.get('/api/:title', (request, response)=>{
+    const title = request.params.title.toLowerCase()
+    if(movies[title]){
+        response.json(movies[title])
+    }else{
+        response.json(movies['unknown'])
+    }
+})
+
+app.get('/api/:releaseYear', (request, response)=>{
+    const year = request.params.releaseYear.toLowerCase()
+    if(movies[year]){
+        response.json(movies[year])
+    }else{
+        response.json(movies['unknown'])
+    }
+})
 
 app.listen(process.env.PORT || PORT, ()=>{
     console.log('we are running')
